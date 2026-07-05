@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhavya Mehta | Full stack Developer </title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- Animated Background Canvas -->
+    <canvas id="bgCanvas" class="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Portfolio</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#work" class="nav-link">My Work</a></li>
+                <li><a href="#contact" class="nav-link">Connect</a></li>
+                <li><a href="resume.pdf" class="nav-link btn-cv" download>Download CV</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for Opportunities</span>
+                </div>
+                <h1 class="hero-title">
+                    Building Digital
+                    <span class="gradient-text">Experiences</span>
+                    That Matter
+                </h1>
+                <p class="hero-subtitle">
+                    Frontend Developer passionate about crafting intuitive, performant, and accessible web applications
+                    using modern technologies and best practices.
+                </p>
+                <div class="hero-cta">
+                    <a href="resume.pdf" class="btn-primary" download>
+                        <i data-lucide="download" class="btn-icon"></i>
+                        Download CV
+                    </a>
+                    <a href="#work" class="btn-secondary">
+                        View My Work
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <i data-lucide="dribbble"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="code-title">developer.js</span>
+                    </div>
+                    <div class="code-body">
+                        <pre class="code-text"><span class="code-keyword">const</span> <span class="code-variable">developer</span> = {
+  <span class="code-property">name</span>: <span class="code-string">"Your Name"</span>,
+  <span class="code-property">role</span>: <span class="code-string">"Frontend Developer"</span>,
+  <span class="code-property">skills</span>: [
+    <span class="code-string">"React"</span>,
+    <span class="code-string">"TypeScript"</span>,
+    <span class="code-string">"Next.js"</span>,
+    <span class="code-string">"Node.js"</span>
+  ],
+  <span class="code-property">passion</span>: <span class="code-string">"Building great UX"</span>,
+  <span class="code-property">available</span>: <span class="code-boolean">true</span>
+};</pre>
+                    </div>
+                </div>
+                <div class="floating-card card-react">
+                    <i data-lucide="atom"></i>
+                    <span>React</span>
+                </div>
+                <div class="floating-card card-ts">
+                    <i data-lucide="file-code"></i>
+                    <span>TypeScript</span>
+                </div>
+                <div class="floating-card card-git">
+                    <i data-lucide="git-branch"></i>
+                    <span>Git</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-header">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title">Crafting Code, <br><span class="gradient-text">Creating Impact</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-story">
+                    <p class="story-text">
+                        I am a dedicated frontend developer with a keen eye for design and a passion for building
+                        seamless user experiences. My journey in web development has been driven by curiosity and
+                        a constant desire to learn and grow.
+                    </p>
+                    <p class="story-text">
+                        I specialize in modern JavaScript frameworks, particularly React and Next.js, with a strong
+                        focus on performance, accessibility, and clean code architecture. I believe that great
+                        software is not just functional, it is intuitive, accessible, and delightful to use.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <h3 class="skills-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <div class="skill-icon">
+                                <i data-lucide="monitor"></i>
+                            </div>
+                            <h4>Frontend</h4>
+                            <ul class="skill-list">
+                                <li>React / Next.js</li>
+                                <li>TypeScript</li>
+                                <li>Tailwind CSS</li>
+                                <li>Framer Motion</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-icon">
+                                <i data-lucide="server"></i>
+                            </div>
+                            <h4>Backend</h4>
+                            <ul class="skill-list">
+                                <li>Node.js</li>
+                                <li>Express</li>
+                                <li>MongoDB</li>
+                                <li>PostgreSQL</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-icon">
+                                <i data-lucide="wrench"></i>
+                            </div>
+                            <h4>Tools</h4>
+                            <ul class="skill-list">
+                                <li>Git / GitHub</li>
+                                <li>Vite / Webpack</li>
+                                <li>Figma</li>
+                                <li>VS Code</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <div class="skill-icon">
+                                <i data-lucide="trending-up"></i>
+                            </div>
+                            <h4>Learning</h4>
+                            <ul class="skill-list">
+                                <li>Three.js</li>
+                                <li>GraphQL</li>
+                                <li>Docker</li>
+                                <li>AWS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section id="work" class="work">
+        <div class="work-container">
+            <div class="work-header">
+                <span class="section-label">My Work</span>
+                <h2 class="section-title">Featured <br><span class="gradient-text">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="layout-dashboard"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Live">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Dashboard</h3>
+                        <p class="project-description">
+                            A comprehensive analytics dashboard for e-commerce platforms with real-time data
+                            visualization and inventory management.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="message-circle"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Live">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">MongoDB</span>
+                        </div>
+                        <h3 class="project-title">Real-time Chat App</h3>
+                        <p class="project-description">
+                            Feature-rich messaging platform with real-time communication, file sharing,
+                            and group chat functionality.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="calendar"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Live">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">React Native</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Redux</span>
+                        </div>
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            Cross-platform mobile app for task management with collaborative features,
+                            reminders, and progress tracking.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="music"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Live">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">Web Audio API</span>
+                            <span class="tag">Tailwind</span>
+                        </div>
+                        <h3 class="project-title">Music Player Web App</h3>
+                        <p class="project-description">
+                            Interactive music streaming interface with custom audio visualizations,
+                            playlists, and seamless playback controls.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Live">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                        <h3 class="project-title">Weather Dashboard</h3>
+                        <p class="project-description">
+                            Interactive weather application with location-based forecasts, historical data
+                            visualization, and severe weather alerts.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="project-placeholder">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" aria-label="View Live">
+                                    <i data-lucide="external-link"></i>
+                                </a>
+                                <a href="#" class="project-link" aria-label="View Code">
+                                    <i data-lucide="github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">MDX</span>
+                            <span class="tag">Vercel</span>
+                        </div>
+                        <h3 class="project-title">Developer Blog Platform</h3>
+                        <p class="project-description">
+                            Modern blogging platform with MDX support, syntax highlighting, and SEO optimization
+                            for technical content creators.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <div class="contact-content">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Let's Build <br><span class="gradient-text">Something Great</span></h2>
+                <p class="contact-text">
+                    I am always open to new opportunities, collaborations, and interesting conversations.
+                    Whether you are a recruiter looking for talent or a fellow developer wanting to connect,
+                    I would love to hear from you.
+                </p>
+                <div class="contact-cta">
+                    <a href="mailto:your.email@example.com" class="btn-primary btn-large">
+                        <i data-lucide="mail" class="btn-icon"></i>
+                        Connect via Email
+                    </a>
+                    <a href="resume.pdf" class="btn-secondary btn-large" download>
+                        <i data-lucide="download" class="btn-icon"></i>
+                        Download CV
+                    </a>
+                </div>
+                <div class="contact-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i data-lucide="github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i data-lucide="linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i data-lucide="twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Dribbble">
+                        <i data-lucide="dribbble"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">Designed & Built with passion</p>
+            <p class="footer-copyright">Your Name 2026. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i data-lucide="arrow-up"></i>
+    </button>
+
+    <script>
+        // Initialize Lucide icons with better error handling
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            } else {
+                console.log('Lucide not loaded immediately, retrying...');
+                setTimeout(() => {
+                    if (typeof lucide !== 'undefined') lucide.createIcons();
+                }, 1000);
+            }
+        });
+
+        // Particle Canvas Animation
+        const canvas = document.getElementById('bgCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let animationId;
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.5;
+                this.speedY = (Math.random() - 0.5) * 0.5;
+                this.opacity = Math.random() * 0.5 + 0.1;
+                this.color = ['#ff7b00', '#ff0055', '#8b5cf6'][Math.floor(Math.random() * 3)];
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = this.opacity;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = window.innerWidth < 768 ? 25 : 50;
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        initParticles();
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            animationId = requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } else { navbar.classList.remove('scrolled'); }
+            if (window.scrollY > 500) { backToTop.classList.add('visible'); } else { backToTop.classList.remove('visible'); }
+        });
+
+        // Back to top
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('active'); });
+        document.querySelectorAll('.nav-link').forEach(link => { link.addEventListener('click', () => { hamburger.classList.remove('active'); navMenu.classList.remove('active'); }); });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } }); }, observerOptions);
+        document.querySelectorAll('.animate-on-scroll, .skill-category, .project-card, .stat-item').forEach(el => { el.classList.add('fade-in-up'); observer.observe(el); });
+
+        // Custom Cursor
+        const cursor = document.createElement('div'); cursor.className = 'custom-cursor'; document.body.appendChild(cursor);
+        const cursorDot = document.createElement('div'); cursorDot.className = 'custom-cursor-dot'; document.body.appendChild(cursorDot);
+        document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px'; cursorDot.style.left = e.clientX + 'px'; cursorDot.style.top = e.clientY + 'px'; });
+        document.querySelectorAll('a, button, .project-card, .skill-category').forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('hover')); el.addEventListener('mouseleave', () => cursor.classList.remove('hover')); });
+
+        // Typing Effect on Hero Title (letters)
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) { heroTitle.style.opacity = '1'; }
+
+        // Parallax effect for code window
+        const codeWindow = document.querySelector('.code-window');
+        if (codeWindow) {
+            document.addEventListener('mousemove', (e) => {
+                const x = (window.innerWidth - e.pageX * 2) / 100;
+                const y = (window.innerHeight - e.pageY * 2) / 100;
+                codeWindow.style.transform = `translateX(${x}px) translateY(${y}px)`;
+            });
+        }
+    </script>\n
+    <script src="script.js" defer></script>\n
+</body>\n
+
+</html>"
