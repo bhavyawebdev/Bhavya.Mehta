@@ -1,0 +1,32 @@
+/* Page-level resets, none of the Vite-starter demo styles are needed. */
+
+html,
+body,
+#root {
+  background: var(--color-ink-950);
+}
+
+/* Make sure focus rings are visible without being shouty */
+:focus-visible {
+  outline: 2px solid var(--color-acid-400);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Tabular numerals for chips, stat cards, and small mono labels */
+.font-mono,
+.chip {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle inner highlight on hero featured card to suggest layered glass */
+.shadow-feature {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* Avoid the marquee container trapping layout precedence */
+.overflow-hidden {
+  contain: layout paint;
+}
