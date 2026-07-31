@@ -1,0 +1,17 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.local
+.env.*.local
+!.env.example
+.idea/
+.vscode/
+.cache/
+
+# AI Studio / IDE generated
+metadata.json
+assets/.aistudio/

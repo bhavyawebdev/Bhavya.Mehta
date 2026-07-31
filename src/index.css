@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #a1a1aa;
+    border-radius: 4px;
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+  }
+}
+
+:root {
+  --color-bg: #FAFAFA;
+  --color-fg: #09090B;
+  --color-primary: #18181B;
+  --color-on-primary: #FFFFFF;
+  --color-secondary: #3F3F46;
+  --color-accent: #2563EB;
+  --color-accent-hover: #1D4ED8;
+  --color-muted: #F1F5F9;
+  --color-card: #FFFFFF;
+  --color-border: #E4E4E7;
+}
+
+.dark {
+  --color-bg: #0B0B0D;
+  --color-fg: #F4F4F5;
+  --color-primary: #F4F4F5;
+  --color-on-primary: #09090B;
+  --color-secondary: #A1A1AA;
+  --color-accent: #3B82F6;
+  --color-accent-hover: #60A5FA;
+  --color-muted: #18181B;
+  --color-card: #1C1C1F;
+  --color-border: #27272A;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+@layer utilities {
+  /* shims for tailwindcss-animate-style utilities removed in Tailwind v4 */
+  .animate-in {
+    animation: ai-in 200ms ease-out both;
+  }
+  .fade-in {
+    animation-name: ai-fade-in;
+  }
+  .zoom-in-95 {
+    animation-name: ai-zoom-in-95;
+  }
+
+  .shadow-xs {
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  }
+
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+}
+
+@keyframes ai-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ai-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes ai-zoom-in-95 {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
