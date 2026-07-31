@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, FileDown, Printer, Mail, Phone, MapPin, Github, Linkedin, Briefcase, GraduationCap, Award, Check } from 'lucide-react';
+import { X, FileDown, Printer, Mail, Phone, MapPin, Briefcase, GraduationCap, Award } from 'lucide-react';
+
 import { personalData, experienceData, skillCategories } from '../data/portfolioData';
 
 interface ResumeModalProps {

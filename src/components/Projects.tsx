@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { ExternalLink, Github, Sparkles, Filter, Code2, ShieldCheck, Check } from 'lucide-react';
+import { ExternalLink, Github, Check } from 'lucide-react';
+
 import { Project } from '../types';
 import { projectsData } from '../data/portfolioData';
 

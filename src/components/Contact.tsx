@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Mail,
   Phone,
-  MessageSquare,
   Github,
   Linkedin,
   Copy,
@@ -10,9 +9,9 @@ import {
   Send,
   Building,
   User,
-  MessageCircle,
-  Sparkles
+  MessageCircle
 } from 'lucide-react';
+
 import { personalData } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {

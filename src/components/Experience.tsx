@@ -1,5 +1,6 @@
 import React from 'react';
-import { Briefcase, Calendar, MapPin, Award, ExternalLink, CheckCircle2 } from 'lucide-react';
+import { MapPin, Award, CheckCircle2 } from 'lucide-react';
+
 import { ExperienceItem } from '../types';
 import { experienceData } from '../data/portfolioData';
 
@@ -28,7 +29,7 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenCertificate }) => 
 
         {/* Timeline Container */}
         <div className="relative border-l-2 border-[#E4E4E7] dark:border-[#27272A] ml-4 sm:ml-8 lg:ml-12 space-y-12 pl-6 sm:pl-10">
-          {experienceData.map((exp, idx) => (
+          {experienceData.map((exp) => (
             <div key={exp.id} className="relative group">
               
               {/* Timeline Marker Node */}

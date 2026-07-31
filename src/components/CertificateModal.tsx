@@ -1,5 +1,6 @@
 import React from 'react';
-import { X, Award, CheckCircle2, Calendar, MapPin, Download, ExternalLink, ShieldCheck } from 'lucide-react';
+import { X, Award, Calendar, MapPin, ShieldCheck } from 'lucide-react';
+
 import { ExperienceItem } from '../types';
 
 interface CertificateModalProps {

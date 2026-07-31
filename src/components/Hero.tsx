@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, FileDown, ArrowUpRight, Sparkles, Code2, Terminal } from 'lucide-react';
+import { Github, FileDown, ArrowUpRight, Code2, Terminal } from 'lucide-react';
+
 import { personalData } from '../data/portfolioData';
 
 interface HeroProps {
