@@ -8,6 +8,7 @@ export interface PersonalInfo {
   github: string;
   linkedin: string;
   location: string;
+  profileImage?: string;
   bioParagraphs: string[];
   education: {
     institution: string;

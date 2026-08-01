@@ -10,6 +10,7 @@ export const personalData: PersonalInfo = {
   github: "https://github.com/bhavyawebdev",
   linkedin: "https://www.linkedin.com/in/bhavya-mehta-83431434b/",
   location: "Bhavnagar, Gujarat, India",
+  profileImage: "/bhavya.jpg",
   bioParagraphs: [
     "I am a passionate Full Stack Developer with a strong background in web technologies, software engineering principles, and user-centered design. Having completed my Diploma in Information Technology from Gyanmanjari Institute of Technology, I built a solid foundation through intensive hands-on internships and real-world project deployments.",
     "Currently, I am advancing my technical expertise by pursuing further studies in Information and Communication Technology (ICT) at Government Engineering College (GEC), Bhavnagar. My development philosophy focuses on writing clean, maintainable code, optimizing user experience, and delivering resilient backend architectures.",

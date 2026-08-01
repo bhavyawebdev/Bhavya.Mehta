@@ -21,13 +21,19 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
         {/* Profile Photo / Avatar - ~180-220px */}
         <div className="relative group">
           <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-b from-[#2563EB] via-[#E4E4E7] to-[#18181B] dark:from-[#3B82F6] dark:via-[#27272A] dark:to-[#F4F4F5] shadow-xl transition-transform duration-300 group-hover:scale-105">
-            <div className="w-full h-full rounded-full bg-[#E8ECF0] dark:bg-[#1C1C1F] flex items-center justify-center overflow-hidden border-2 border-white dark:border-[#0B0B0D] relative">
+            <div className="relative w-full h-full rounded-full bg-[#E8ECF0] dark:bg-[#1C1C1F] overflow-hidden border-2 border-white dark:border-[#0B0B0D]">
 
               {/* Profile Photo */}
               <img
-                src="/bhavya.jpg"
+                src={personalData.profileImage || "/bhavya.jpg"}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== window.location.origin + '/bhavya.jpg') {
+                    target.src = '/bhavya.jpg';
+                  }
+                }}
                 alt={`${personalData.name} — Profile Photo`}
-                className="w-full h-full object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
                 loading="eager"
                 decoding="async"
               />
