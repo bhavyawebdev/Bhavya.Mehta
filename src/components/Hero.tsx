@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, FileDown, ArrowUpRight, Code2, Terminal } from 'lucide-react';
+import { Github, FileDown, ArrowUpRight, Code2 } from 'lucide-react';
 
 import { personalData } from '../data/portfolioData';
 
@@ -22,18 +22,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
         <div className="relative group">
           <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-b from-[#2563EB] via-[#E4E4E7] to-[#18181B] dark:from-[#3B82F6] dark:via-[#27272A] dark:to-[#F4F4F5] shadow-xl transition-transform duration-300 group-hover:scale-105">
             <div className="w-full h-full rounded-full bg-[#E8ECF0] dark:bg-[#1C1C1F] flex items-center justify-center overflow-hidden border-2 border-white dark:border-[#0B0B0D] relative">
-              
-              {/* Profile Illustration / Photo Representation */}
-              <div className="w-full h-full bg-gradient-to-br from-[#18181B] to-[#3F3F46] dark:from-[#1C1C1F] dark:to-[#27272A] flex flex-col items-center justify-center text-white relative">
-                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px]" />
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#2563EB]/20 dark:bg-[#3B82F6]/20 border border-[#2563EB]/40 flex items-center justify-center mb-1">
-                  <span className="font-serif font-bold text-3xl sm:text-4xl text-[#FFFFFF]">BM</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-xs font-mono text-[#3B82F6] bg-[#09090B]/60 px-3 py-1 rounded-full border border-[#27272A]">
-                  <Terminal className="w-3.5 h-3.5" />
-                  <span>Developer</span>
-                </div>
-              </div>
+
+              {/* Profile Photo */}
+              <img
+                src="/bhavya.jpg"
+                alt={`${personalData.name} — Profile Photo`}
+                className="w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
 
             </div>
           </div>
