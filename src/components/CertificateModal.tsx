@@ -41,37 +41,54 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ experience, 
 
         {/* Certificate Display Area */}
         <div className="p-6 sm:p-8 space-y-6">
-          
-          {/* Simulated Certificate View Frame */}
-          <div className="p-6 sm:p-8 rounded-xl bg-white dark:bg-[#18181B] border-2 border-dashed border-[#2563EB]/40 dark:border-[#3B82F6]/40 text-center space-y-4 shadow-inner relative">
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-              <ShieldCheck className="w-4 h-4" />
-              <span>Official Internship Certification</span>
+
+          {/* Actual Certificate Image */}
+          {experience.certificateUrl ? (
+            <div className="rounded-xl overflow-hidden border border-[#E4E4E7] dark:border-[#27272A] bg-white shadow-inner">
+              <img
+                src={experience.certificateUrl}
+                alt={`${experience.company} internship certificate - ${experience.role}`}
+                className="w-full h-auto object-contain max-h-[60vh]"
+              />
             </div>
+          ) : (
+            <div className="p-6 sm:p-8 rounded-xl bg-white dark:bg-[#18181B] border-2 border-dashed border-[#2563EB]/40 dark:border-[#3B82F6]/40 text-center space-y-4 shadow-inner relative">
+              <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                <ShieldCheck className="w-4 h-4" />
+                <span>Official Internship Certification</span>
+              </div>
 
-            <div className="space-y-1">
-              <span className="text-xs text-[#3F3F46] dark:text-[#A1A1AA] uppercase tracking-wider block font-sans">
-                This certifies that
-              </span>
-              <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#09090B] dark:text-[#F4F4F5]">
-                Bhavya Mehta
-              </h2>
+              <div className="space-y-1">
+                <span className="text-xs text-[#3F3F46] dark:text-[#A1A1AA] uppercase tracking-wider block font-sans">
+                  This certifies that
+                </span>
+                <h2 className="font-serif font-bold text-2xl sm:text-3xl text-[#09090B] dark:text-[#F4F4F5]">
+                  Bhavya Mehta
+                </h2>
+              </div>
+
+              <p className="text-sm text-[#3F3F46] dark:text-[#A1A1AA] max-w-lg mx-auto leading-relaxed">
+                has successfully completed the internship as <strong className="text-[#09090B] dark:text-[#F4F4F5]">{experience.role}</strong> at <strong className="text-[#09090B] dark:text-[#F4F4F5]">{experience.company}</strong>, demonstrating exceptional proficiency in software engineering and web application development.
+              </p>
             </div>
+          )}
 
-            <p className="text-sm text-[#3F3F46] dark:text-[#A1A1AA] max-w-lg mx-auto leading-relaxed">
-              has successfully completed the internship as <strong className="text-[#09090B] dark:text-[#F4F4F5]">{experience.role}</strong> at <strong className="text-[#09090B] dark:text-[#F4F4F5]">{experience.company}</strong>, demonstrating exceptional proficiency in software engineering and web application development.
-            </p>
-
-            <div className="pt-4 border-t border-[#E4E4E7] dark:border-[#27272A] flex flex-wrap justify-center gap-6 text-xs text-[#3F3F46] dark:text-[#A1A1AA]">
+          {/* Certificate Meta */}
+          <div className="flex flex-wrap justify-center gap-6 text-xs text-[#3F3F46] dark:text-[#A1A1AA]">
+            <span className="flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
+              Period: {experience.period}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
+              {experience.location}
+            </span>
+            {experience.issuedDate && (
               <span className="flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-[#2563EB]" />
-                Period: {experience.period}
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-500" />
+                {experience.issuedDate}
               </span>
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#2563EB]" />
-                {experience.location}
-              </span>
-            </div>
+            )}
           </div>
 
           {/* Validated Skills */}

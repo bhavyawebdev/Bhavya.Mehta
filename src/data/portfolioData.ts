@@ -146,48 +146,51 @@ export const projectsData: Project[] = [
 
 export const experienceData: ExperienceItem[] = [
   {
-    id: "kronosis-1",
-    company: "Kronosis Technolabs",
-    role: "Full Stack Web Development Intern",
-    period: "Internship",
-    location: "Bhavnagar, India",
+    id: "crontosys-1",
+    company: "Crontosys Technolabs",
+    role: "Graphics Designer Intern",
+    period: "May 31, 2024 – June 17, 2024",
+    location: "Bhavnagar, Gujarat, India",
     description: [
-      "Architected responsive user interfaces using React, JavaScript, and Tailwind CSS for client projects.",
-      "Integrated RESTful API endpoints and optimized backend database queries to enhance response times.",
-      "Participated in Agile sprint planning, code reviews, and Git version control workflows."
+      "Completed a 15-day intensive internship as a Graphics Designer, demonstrating exceptional skills in graphic design, creativity, and a dedication to learning.",
+      "Designed marketing materials, created digital content, and collaborated with the team on a variety of creative projects.",
+      "Applied theoretical knowledge from the Diploma in IT Engineering course to real-world applications, significantly enhancing practical understanding of graphic design."
     ],
-    skillsUsed: ["React", "Node.js", "JavaScript", "REST APIs", "Git"],
-    certificateTitle: "Certificate of Completion - Kronosis Technolabs",
-    issuedDate: "Verified Internship Certificate"
+    skillsUsed: ["Graphic Design", "Marketing Materials", "Digital Content", "Creative Collaboration", "Adobe Tools"],
+    certificateUrl: "/certificate-crontosys.jpeg",
+    certificateTitle: "Certificate of Internship Completion - Crontosys Technolabs",
+    issuedDate: "Issued: 17th June 2024"
   },
   {
     id: "ithub-1",
-    company: "IT Hub Software and Solutions",
-    role: "Software Engineering Intern",
-    period: "Internship",
-    location: "Bhavnagar, India",
+    company: "IT Hub Software Solutions",
+    role: "Front-End Developer Intern",
+    period: "June 2, 2025 – June 16, 2025",
+    location: "Bhavnagar, Gujarat, India",
     description: [
-      "Developed web modules and backend services for local enterprise management tools.",
-      "Implemented database schemas in MySQL and structured secure user authentication flows.",
-      "Collaborated with senior engineers to debug cross-browser layout inconsistencies and unit test components."
+      "Completed a front-end development internship under the guidance of Mr. Piyush Danani, gaining hands-on industry exposure.",
+      "Actively involved in training and primarily worked with HTML, CSS, JavaScript, and Bootstrap to build responsive interfaces.",
+      "Recognized by mentors as diligent, hardworking, and inquisitive throughout the duration of the program."
     ],
-    skillsUsed: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "Bootstrap"],
-    certificateTitle: "Certificate of Achievement - IT Hub Software & Solutions",
-    issuedDate: "Verified Internship Certificate"
+    skillsUsed: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Responsive UI"],
+    certificateUrl: "/certificate-ithub-frontend.jpeg",
+    certificateTitle: "Certificate of Internship - IT Hub Software Solutions (Front-End Developer)",
+    issuedDate: "Issued: 16/06/2025"
   },
   {
     id: "ithub-2",
-    company: "IT Hub Software and Solutions",
-    role: "Frontend Developer Intern",
-    period: "Internship",
-    location: "Bhavnagar, India",
+    company: "IT Hub Software Solutions",
+    role: "Web Developer Intern",
+    period: "January 15, 2026 – April 15, 2026",
+    location: "Bhavnagar, Gujarat, India",
     description: [
-      "Focused on building responsive UI components, dynamic form workflows, and client dashboard views.",
-      "Ensured cross-device compatibility across mobile, tablet, and desktop display resolutions.",
-      "Refactored legacy CSS and JavaScript codebases to improve rendering speed and WCAG accessibility standards."
+      "Successfully completed a Web Developer internship under the guidance of Mr. Piyush Danani, advancing full front-end proficiency.",
+      "Actively involved in training and primarily worked with HTML, CSS, JavaScript, Bootstrap, PHP, and MySQL across live projects.",
+      "Demonstrated strong diligence, hard work, and curiosity throughout the program while building production-style web modules."
     ],
-    skillsUsed: ["HTML5", "CSS3", "JavaScript (ES6+)", "UI/UX Design", "Responsive Layouts"],
-    certificateTitle: "Frontend Engineering Certificate - IT Hub Software & Solutions",
-    issuedDate: "Verified Internship Certificate"
+    skillsUsed: ["HTML5", "CSS3", "JavaScript", "Bootstrap", "PHP", "MySQL"],
+    certificateUrl: "/certificate-ithub-webdev.jpeg",
+    certificateTitle: "Certificate of Internship - IT Hub Software Solutions (Web Developer)",
+    issuedDate: "Issued: 15/04/2026"
   }
 ];
