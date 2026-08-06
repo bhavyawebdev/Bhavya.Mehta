@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Moon, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
+import { ResolvedTheme, Theme } from '../hooks/useTheme';
 
 
 interface NavbarProps {
-  isDarkMode: boolean;
-  toggleTheme: () => void;
+  theme: Theme;
+  resolvedTheme: ResolvedTheme;
+  cycleTheme: () => void;
   activeSection: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme, activeSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({ theme, resolvedTheme, cycleTheme, activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -93,25 +96,13 @@ export const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleTheme, activeS
 
           <div className="h-4 w-[1px] bg-[#E4E4E7] dark:bg-[#27272A] mx-2" />
 
-          {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle dark mode"
-            className="p-2.5 rounded-lg text-[#3F3F46] dark:text-[#A1A1AA] hover:text-[#09090B] dark:hover:text-[#F4F4F5] hover:bg-[#E8ECF0] dark:hover:bg-[#1C1C1F] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB]"
-          >
-            {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-          </button>
+          {/* Theme Toggle */}
+          <ThemeToggle theme={theme} resolvedTheme={resolvedTheme} onCycle={cycleTheme} />
         </nav>
 
         {/* Mobile menu button */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            aria-label="Toggle dark mode"
-            className="p-2 rounded-lg text-[#3F3F46] dark:text-[#A1A1AA] hover:bg-[#E8ECF0] dark:hover:bg-[#1C1C1F]"
-          >
-            {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
+          <ThemeToggle theme={theme} resolvedTheme={resolvedTheme} onCycle={cycleTheme} />
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
