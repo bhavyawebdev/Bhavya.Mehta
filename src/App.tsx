@@ -12,11 +12,9 @@ import { Footer } from './components/Footer';
 import { CertificateModal } from './components/CertificateModal';
 import { ResumeModal } from './components/ResumeModal';
 import { ExperienceItem } from './types';
-import { useTheme } from './hooks/useTheme';
 import EntryAnimation from './components/entryanimation';
 
 export default function App() {
-  const { theme, resolvedTheme, cycleTheme } = useTheme();
 
   const [activeSection, setActiveSection] = useState<string>('home');
   const [selectedCertificate, setSelectedCertificate] = useState<ExperienceItem | null>(null);
@@ -144,9 +142,6 @@ export default function App() {
 
       {/* Top Navbar */}
       <Navbar
-        theme={theme}
-        resolvedTheme={resolvedTheme}
-        cycleTheme={cycleTheme}
         activeSection={activeSection}
       />
 
