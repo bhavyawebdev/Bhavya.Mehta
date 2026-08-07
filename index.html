@@ -13,12 +13,12 @@
     <script>
       (function () {
         try {
+          /* Default = light. Only go dark if user previously chose dark. */
           var saved = localStorage.getItem('portfolio_theme');
-          var mode = saved === 'light' || saved === 'dark' || saved === 'system' ? saved : 'system';
-          var isDark = mode === 'dark' || (mode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          var isDark = saved === 'dark';
           var root = document.documentElement;
           root.classList.toggle('dark', isDark);
-          root.dataset.theme = mode;
+          root.dataset.theme = isDark ? 'dark' : 'light';
           root.style.colorScheme = isDark ? 'dark' : 'light';
           var meta = document.querySelector('meta[name="theme-color"]');
           if (meta) meta.setAttribute('content', isDark ? '#0B0B0D' : '#FAFAFA');

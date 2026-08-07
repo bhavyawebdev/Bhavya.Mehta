@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
+import { Theme } from '../hooks/useTheme';
 
 
 interface NavbarProps {
+  theme: Theme;
+  onToggleTheme: () => void;
   activeSection: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
+export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -89,10 +93,16 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
             );
           })}
 
+          <div className="h-4 w-[1px] bg-[#E4E4E7] dark:bg-[#27272A] mx-2" />
+
+          {/* Theme Toggle */}
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
         </nav>
 
         {/* Mobile menu button */}
         <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
