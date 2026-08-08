@@ -18,18 +18,49 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
 
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center z-10 space-y-6 sm:space-y-8">
 
-        {/* Role / Tagline Label */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2563EB]/10 dark:bg-[#3B82F6]/15 border border-[#2563EB]/20 dark:border-[#3B82F6]/30">
-          <Code2 className="w-4 h-4 text-[#2563EB] dark:text-[#3B82F6]" />
-          <span className="text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]">
-            {personalData.role}
-          </span>
+        {/* Profile Photo / Avatar - ~180-220px */}
+        <div className="relative group">
+          <div className="w-44 h-44 sm:w-52 sm:h-52 rounded-full p-1.5 bg-gradient-to-b from-[#2563EB] via-[#E4E4E7] to-[#18181B] dark:from-[#3B82F6] dark:via-[#27272A] dark:to-[#F4F4F5] shadow-xl transition-transform duration-300 group-hover:scale-105">
+            <div className="relative w-full h-full rounded-full bg-[#E8ECF0] dark:bg-[#1C1C1F] overflow-hidden border-2 border-white dark:border-[#0B0B0D]">
+
+              {/* Profile Photo */}
+              <img
+                src={personalData.profileImage || "/bhavya.jpg"}
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== window.location.origin + '/bhavya.jpg') {
+                    target.src = '/bhavya.jpg';
+                  }
+                }}
+                alt={`${personalData.name} — Profile Photo`}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="eager"
+                decoding="async"
+              />
+
+            </div>
+          </div>
+
+          {/* Status Badge */}
+          <div className="absolute bottom-1 right-2 bg-emerald-500 text-white p-1.5 rounded-full border-4 border-[#FAFAFA] dark:border-[#0B0B0D] shadow-md flex items-center justify-center" title="Open for opportunities">
+            <span className="w-2.5 h-2.5 rounded-full bg-white animate-pulse" />
+          </div>
         </div>
 
-        {/* Name Heading */}
-        <h1 className="font-serif font-extrabold text-5xl sm:text-7xl lg:text-8xl text-[#09090B] dark:text-[#F4F4F5] tracking-tight leading-none">
-          {personalData.name}
-        </h1>
+        {/* Name in Playfair Display */}
+        <div className="space-y-3">
+          <h1 className="font-serif font-bold text-4xl sm:text-6xl md:text-7xl text-[#09090B] dark:text-[#F4F4F5] tracking-tight leading-tight">
+            {personalData.name}
+          </h1>
+
+          {/* Role / Tagline Label */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2563EB]/10 dark:bg-[#3B82F6]/15 border border-[#2563EB]/20 dark:border-[#3B82F6]/30">
+            <Code2 className="w-4 h-4 text-[#2563EB] dark:text-[#3B82F6]" />
+            <span className="text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]">
+              {personalData.role}
+            </span>
+          </div>
+        </div>
 
         {/* 1-2 line supporting sentence */}
         <p className="max-w-2xl text-base sm:text-lg text-[#3F3F46] dark:text-[#A1A1AA] font-sans font-normal leading-relaxed text-balance">
