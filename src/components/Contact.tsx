@@ -42,18 +42,33 @@ export const Contact: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
-    // Build mailto URL
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name} (${formData.company || 'Direct'})`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\n\nMessage:\n${formData.message}`
-    );
+    const formEndpoint = 'https://submit.formpost.ai/xp057z3w';
+    const payload = new FormData();
+    payload.append('name', formData.name);
+    payload.append('email', formData.email);
+    payload.append('company', formData.company || 'N/A');
+    payload.append('message', formData.message);
 
-    window.open(`mailto:${personalData.email}?subject=${subject}&body=${body}`, '_blank');
-    setIsSubmitted(true);
+    try {
+      await fetch(formEndpoint, {
+        method: 'POST',
+        body: payload,
+        headers: { 'Accept': 'application/json' },
+      });
+      setIsSubmitted(true);
+    } catch {
+      // fallback to mailto if fetch fails
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name} (${formData.company || 'Direct'})`);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'N/A'}\n\nMessage:\n${formData.message}`
+      );
+      window.open(`mailto:${personalData.email}?subject=${subject}&body=${body}`, '_blank');
+      setIsSubmitted(true);
+    }
   };
 
   return (
