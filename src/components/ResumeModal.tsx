@@ -16,49 +16,89 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   };
 
   const handleDownloadPDF = () => {
-    // Generate text/markdown formatted resume file download
-    const content = `BHAVYA MEHTA
-Full Stack Developer
-Email: ${personalData.email} | Phone: +91 ${personalData.phone}
-Location: ${personalData.location}
-GitHub: ${personalData.github}
-LinkedIn: ${personalData.linkedin}
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) return;
 
-----------------------------------------------------
-SUMMARY
-${personalData.tagline}
+    const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>${personalData.name} — Resume</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Helvetica', 'Arial', sans-serif; color: #09090B; background: #fff; padding: 40px; font-size: 12px; line-height: 1.5; }
+  h1 { font-family: 'Georgia', serif; font-size: 26px; font-weight: 700; }
+  h2 { font-family: 'Georgia', serif; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid #E4E4E7; padding-bottom: 4px; margin-bottom: 10px; margin-top: 18px; }
+  .role { color: #2563EB; font-weight: 600; font-size: 13px; margin-top: 2px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 14px; color: #52525B; font-size: 11px; margin-top: 8px; }
+  .header { border-bottom: 1px solid #E4E4E7; padding-bottom: 14px; }
+  .section { margin-top: 18px; }
+  .exp, .edu { margin-bottom: 12px; }
+  .exp-head, .edu-head { display: flex; justify-content: space-between; font-weight: 600; }
+  .exp-co { color: #2563EB; }
+  .loc { color: #71717A; font-size: 11px; }
+  ul { padding-left: 18px; margin-top: 4px; color: #27272A; }
+  li { margin-bottom: 2px; }
+  .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .skill-cat { font-weight: 600; }
+  p.summary { margin-top: 6px; color: #27272A; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>${personalData.name}</h1>
+    <div class="role">${personalData.role}</div>
+    <div class="meta">
+      <span>${personalData.email}</span>
+      <span>+91 ${personalData.phone}</span>
+      <span>${personalData.location}</span>
+    </div>
+  </div>
 
-----------------------------------------------------
-EDUCATION
-1. Bachelor of Engineering (B.E.) - Information & Communication Technology (ICT)
-   Government Engineering College (GEC), Bhavnagar | Currently Pursuing
+  <div class="section">
+    <h2>Professional Summary</h2>
+    <p class="summary">${personalData.tagline} Completed Diploma Engineering in IT from Gyanmanjari Institute of Technology with extensive internship experience; currently pursuing B.E. in ICT at GEC Bhavnagar.</p>
+  </div>
 
-2. Diploma Engineering - Information Technology (IT)
-   Gyanmanjari Institute of Technology | Graduated
+  <div class="section">
+    <h2>Education</h2>
+    ${personalData.education.map(edu => `
+      <div class="edu">
+        <div class="edu-head"><span>${edu.institution}</span><span class="loc">${edu.period}</span></div>
+        <div>${edu.degree} in ${edu.field} — <span class="exp-co">${edu.status}</span></div>
+      </div>
+    `).join('')}
+  </div>
 
-----------------------------------------------------
-INTERNSHIP EXPERIENCE
-${experienceData.map(e => `
-* ${e.role} | ${e.company} (${e.period})
-  Location: ${e.location}
-  - ${e.description.join('\n  - ')}
-  Key Tech: ${e.skillsUsed.join(', ')}
-`).join('')}
+  <div class="section">
+    <h2>Internship Experience</h2>
+    ${experienceData.map(exp => `
+      <div class="exp">
+        <div class="exp-head"><span>${exp.role} — <span class="exp-co">${exp.company}</span></span><span class="loc">${exp.location}</span></div>
+        <ul>${exp.description.map(b => `<li>${b}</li>`).join('')}</ul>
+      </div>
+    `).join('')}
+  </div>
 
-----------------------------------------------------
-TECHNICAL SKILLS
-${skillCategories.map(c => `${c.title}: ${c.skills.map(s => s.name).join(', ')}`).join('\n')}
-`;
+  <div class="section">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      ${skillCategories.map(cat => `
+        <div><span class="skill-cat">${cat.title}:</span> ${cat.skills.map(s => s.name).join(', ')}</div>
+      `).join('')}
+    </div>
+  </div>
 
-    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'Bhavya_Mehta_Resume.txt';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+  <script>
+    window.onload = () => {
+      setTimeout(() => { window.print(); }, 250);
+    };
+  </script>
+</body>
+</html>`;
+
+    printWindow.document.write(html);
+    printWindow.document.close();
   };
 
   return (
@@ -82,7 +122,7 @@ ${skillCategories.map(c => `${c.title}: ${c.skills.map(s => s.name).join(', ')}`
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-semibold transition-colors"
             >
               <FileDown className="w-3.5 h-3.5" />
-              <span>Download TXT/PDF</span>
+              <span>Download PDF</span>
             </button>
 
             <button
