@@ -6,7 +6,6 @@ import {
   ArrowUp,
   MapPin,
   Phone,
-  Code2,
   Heart,
 } from 'lucide-react';
 import { personalData } from '../data/portfolioData';
@@ -146,7 +145,7 @@ export const Footer: React.FC = () => {
       {/* ════════════════════════════════════════
           MAIN FOOTER BODY
       ════════════════════════════════════════ */}
-      <div style={{ maxWidth: '1152px', margin: '0 auto', padding: '3rem 2rem 0' }}>
+      <div style={{ maxWidth: '1152px', margin: '0 auto', padding: '3rem 1.25rem 0' }}>
 
         {/* ── Row 1: Brand + Contact Info + Social ── */}
         <div
@@ -422,15 +421,13 @@ export const Footer: React.FC = () => {
           >
             © {currentYear} {personalData.name}. All rights reserved.
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', color: '#3F3F46' }}>
-              · Built with
-              <Code2 style={{ width: '13px', height: '13px', color: '#2563EB' }} />
-              React & TypeScript
+
               <Heart style={{ width: '12px', height: '12px', color: '#F43F5E', fill: '#F43F5E' }} />
             </span>
           </p>
 
           {/* Nav group — right side */}
-          <nav aria-label="Footer bottom navigation" style={{ display: 'flex', gap: '1.25rem' }}>
+          <nav aria-label="Footer bottom navigation" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', rowGap: '0.5rem' }}>
             <a
               href={personalData.github}
               target="_blank"
@@ -470,8 +467,8 @@ export const Footer: React.FC = () => {
         id="footer-scroll-top-btn"
         style={{
           position: 'fixed',
-          bottom: '2rem',
-          right: '2rem',
+          bottom: '1.25rem',
+          right: '1.25rem',
           width: '44px',
           height: '44px',
           borderRadius: '12px',

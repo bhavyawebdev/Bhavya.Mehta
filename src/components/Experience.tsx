@@ -28,17 +28,17 @@ export const Experience: React.FC<ExperienceProps> = ({ onOpenCertificate }) => 
         </div>
 
         {/* Timeline Container */}
-        <div className="relative border-l-2 border-[#E4E4E7] dark:border-[#27272A] ml-4 sm:ml-8 lg:ml-12 space-y-12 pl-6 sm:pl-10">
+        <div className="relative border-l-2 border-[#E4E4E7] dark:border-[#27272A] ml-2 sm:ml-8 lg:ml-12 space-y-10 sm:space-y-12 pl-5 sm:pl-10">
           {experienceData.map((exp) => (
             <div key={exp.id} className="relative group">
-              
+
               {/* Timeline Marker Node */}
-              <div className="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-[#2563EB] dark:bg-[#3B82F6] border-4 border-[#FAFAFA] dark:border-[#0B0B0D] shadow-md flex items-center justify-center transition-transform group-hover:scale-125">
+              <div className="absolute -left-[27px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-[#2563EB] dark:bg-[#3B82F6] border-4 border-[#FAFAFA] dark:border-[#0B0B0D] shadow-md flex items-center justify-center transition-transform group-hover:scale-125">
                 <div className="w-1.5 h-1.5 rounded-full bg-white" />
               </div>
 
               {/* Experience Card */}
-              <div className="p-6 sm:p-8 rounded-2xl bg-[#E8ECF0]/50 dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs hover:shadow-md transition-all duration-300 space-y-5">
+              <div className="p-5 sm:p-8 rounded-2xl bg-[#E8ECF0]/50 dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs hover:shadow-md transition-all duration-300 space-y-5">
                 
                 {/* Header row */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#E4E4E7] dark:border-[#27272A] pb-4">

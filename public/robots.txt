@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bhavya-mehta.vercel.app/sitemap.xml

@@ -12,20 +12,20 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ experience, 
   if (!experience) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl space-y-0 animate-in zoom-in-95 duration-200">
-        
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl max-w-2xl w-full max-h-[95vh] overflow-y-auto shadow-2xl space-y-0 animate-in zoom-in-95 duration-200">
+
         {/* Modal Header */}
-        <div className="p-6 bg-[#18181B] text-white flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
-              <Award className="w-6 h-6" />
+        <div className="p-4 sm:p-6 bg-[#18181B] text-white flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3 min-w-0">
+            <div className="p-2 sm:p-2.5 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 shrink-0">
+              <Award className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
-            <div>
-              <span className="text-[11px] font-mono text-amber-400 uppercase tracking-widest block">
+            <div className="min-w-0">
+              <span className="text-[10px] sm:text-[11px] font-mono text-amber-400 uppercase tracking-widest block">
                 Verified Certificate
               </span>
-              <h3 className="font-serif font-bold text-xl text-white">
+              <h3 className="font-serif font-bold text-lg sm:text-xl text-white truncate">
                 {experience.company}
               </h3>
             </div>
@@ -33,14 +33,15 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ experience, 
 
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-[#A1A1AA] hover:text-white hover:bg-[#27272A] transition-colors"
+            className="p-2 rounded-xl text-[#A1A1AA] hover:text-white hover:bg-[#27272A] transition-colors shrink-0"
+            aria-label="Close certificate"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Certificate Display Area */}
-        <div className="p-6 sm:p-8 space-y-6">
+        <div className="p-5 sm:p-8 space-y-6">
 
           {/* Actual Certificate Image */}
           {experience.certificateUrl ? (

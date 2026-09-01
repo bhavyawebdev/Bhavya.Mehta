@@ -66,11 +66,11 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* Skill Categories Grid (2x2 on desktop, 1 col mobile) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {skillCategories.map((category, idx) => (
             <div
               key={idx}
-              className="p-8 rounded-2xl bg-[#E8ECF0]/60 dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs hover:shadow-md transition-all duration-300 space-y-6"
+              className="p-6 sm:p-8 rounded-2xl bg-[#E8ECF0]/60 dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs hover:shadow-md transition-all duration-300 space-y-6"
             >
               <div className="space-y-2 border-b border-[#E4E4E7] dark:border-[#27272A] pb-4">
                 <div className="flex items-center justify-between">

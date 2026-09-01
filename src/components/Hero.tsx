@@ -12,20 +12,20 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
   return (
     <section
       id="home"
-      className="min-h-screen pt-28 pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden bg-[#FAFAFA] dark:bg-[#0B0B0D]"
+      className="min-h-[100svh] pt-24 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center relative overflow-hidden bg-[#FAFAFA] dark:bg-[#0B0B0D]"
     >
       {/* Background subtle geometry decorative grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
         {/* LEFT — Text */}
-        <div className="flex flex-col items-start text-left space-y-6 sm:space-y-7 order-2 lg:order-1">
+        <div className="flex flex-col items-start text-left space-y-5 sm:space-y-7 order-2 lg:order-1">
 
           {/* Role / Tagline Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#2563EB]/10 dark:bg-[#3B82F6]/15 border border-[#2563EB]/20 dark:border-[#3B82F6]/30">
-            <Code2 className="w-4 h-4 text-[#2563EB] dark:text-[#3B82F6]" />
-            <span className="text-xs sm:text-sm font-sans font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#2563EB]/10 dark:bg-[#3B82F6]/15 border border-[#2563EB]/20 dark:border-[#3B82F6]/30">
+            <Code2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2563EB] dark:text-[#3B82F6]" />
+            <span className="text-[11px] sm:text-sm font-sans font-semibold uppercase tracking-wider text-[#2563EB] dark:text-[#3B82F6]">
               {personalData.role}
             </span>
           </div>
@@ -36,12 +36,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
           </p>
 
           {/* Name */}
-          <h1 className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] text-[#09090B] dark:text-[#F4F4F5] tracking-tight leading-[0.95]">
+          <h1 className="font-serif font-bold text-[2.75rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[5rem] xl:text-[5.75rem] text-[#09090B] dark:text-[#F4F4F5] tracking-tight">
             {personalData.name}
           </h1>
 
           {/* Tagline */}
-          <p className="max-w-xl text-base sm:text-lg text-[#3F3F46] dark:text-[#A1A1AA] font-sans font-normal leading-relaxed text-balance">
+          <p className="max-w-xl text-[15px] sm:text-lg text-[#3F3F46] dark:text-[#A1A1AA] font-sans font-normal leading-relaxed text-balance">
             {personalData.tagline}
           </p>
 
@@ -68,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
           </div>
 
           {/* Quick meta */}
-          <div className="pt-4 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-sans text-[#3F3F46] dark:text-[#A1A1AA]">
+          <div className="pt-4 flex flex-wrap items-center gap-x-4 sm:gap-x-6 gap-y-2 text-[11px] sm:text-xs font-sans text-[#3F3F46] dark:text-[#A1A1AA]">
             <span className="flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB] dark:bg-[#3B82F6]" />
               Location: Bhavnagar, Gujarat
@@ -82,7 +82,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
         </div>
 
         {/* RIGHT — ProfileCard */}
-        <div className="order-1 lg:order-2 flex items-center justify-center">
+        <div className="order-1 lg:order-2 flex items-center justify-center py-4 lg:py-0">
           <ProfileCard
             name={personalData.name}
             title={personalData.role}
@@ -94,7 +94,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenResumeModal }) => {
             enableTilt={true}
             enableMobileTilt={false}
             onContactClick={() => {
-              const el = document.getElementById('contact');
+              const el = document.getElementById('connect');
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
             behindGlowEnabled

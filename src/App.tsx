@@ -22,8 +22,18 @@ export default function App() {
   const [selectedCertificate, setSelectedCertificate] = useState<ExperienceItem | null>(null);
   const [resumeModalOpen, setResumeModalOpen] = useState<boolean>(false);
   const [introVisible, setIntroVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.matchMedia('(max-width: 640px)').matches : false
+  );
 
   const introRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 640px)');
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
 
   // Dismiss intro after animation completes (draw ~1.6s + fill ~0.8s + stagger for 12 chars ~0.6s = ~3s total)
   useEffect(() => {
@@ -99,21 +109,21 @@ export default function App() {
           />
 
           {/* Stroke-draw name */}
-          <div style={{ width: '100%', maxWidth: '780px', padding: '0 2rem' }}>
+          <div style={{ width: '100%', maxWidth: '780px', padding: '0 1rem' }}>
             <EntryAnimation
               text="Bhavya Mehta"
               strokeColor="#A78BFA"
               fillColor="#F8FAFC"
-              strokeWidth={1.4}
+              strokeWidth={isMobile ? 1 : 1.4}
               drawDuration={1.6}
               fillDelay={0.2}
               stagger={0.05}
               ease="power2.out"
               trigger="mount"
               fillMode="wipe"
-              fontSize={108}
+              fontSize={isMobile ? 48 : 108}
               fontWeight={800}
-              letterSpacing={-4}
+              letterSpacing={isMobile ? -1.5 : -4}
             />
           </div>
 

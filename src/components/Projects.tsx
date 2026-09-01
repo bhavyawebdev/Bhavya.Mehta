@@ -52,7 +52,7 @@ export const Projects: React.FC = () => {
         </div>
 
         {/* Projects Grid: 3 cols desktop, 1 col mobile */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredProjects.map((project) => {
             const hasLiveUrl = project.liveUrl && project.liveUrl !== '#';
 
@@ -159,8 +159,8 @@ export const Projects: React.FC = () => {
 
       {/* Detail Modal */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs">
-          <div className="bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl max-w-lg w-full p-6 space-y-6 shadow-2xl animate-in fade-in zoom-in-95">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs">
+          <div className="bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl max-w-lg w-full max-h-[95vh] overflow-y-auto p-5 sm:p-6 space-y-6 shadow-2xl animate-in fade-in zoom-in-95">
             <div className="flex items-center justify-between border-b border-[#E4E4E7] dark:border-[#27272A] pb-4">
               <h3 className="font-serif font-bold text-2xl text-[#09090B] dark:text-[#F4F4F5]">
                 {selectedProject.title}

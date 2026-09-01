@@ -102,27 +102,28 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200 overflow-y-auto">
-      <div className="bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl max-w-3xl w-full my-8 overflow-hidden shadow-2xl space-y-0 animate-in zoom-in-95 duration-200">
-        
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200 overflow-y-auto">
+      <div className="bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] rounded-2xl max-w-3xl w-full my-4 sm:my-8 overflow-hidden shadow-2xl space-y-0 animate-in zoom-in-95 duration-200">
+
         {/* Modal Top Toolbar */}
-        <div className="p-4 sm:p-6 bg-[#18181B] text-white flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-blue-600/30 text-blue-400">
+        <div className="p-3 sm:p-6 bg-[#18181B] text-white flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <div className="p-2 rounded-lg bg-blue-600/30 text-blue-400 shrink-0">
               <FileDown className="w-5 h-5" />
             </div>
-            <h3 className="font-serif font-bold text-lg sm:text-xl text-white">
+            <h3 className="font-serif font-bold text-base sm:text-xl text-white truncate">
               Bhavya Mehta — Official Resume
             </h3>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               onClick={handleDownloadPDF}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-xs font-semibold transition-colors"
+              className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1.5 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-[11px] sm:text-xs font-semibold transition-colors"
             >
               <FileDown className="w-3.5 h-3.5" />
-              <span>Download PDF</span>
+              <span className="hidden xs:inline sm:inline">Download PDF</span>
+              <span className="xs:hidden sm:hidden">PDF</span>
             </button>
 
             <button
@@ -136,6 +137,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <button
               onClick={onClose}
               className="p-2 rounded-lg text-[#A1A1AA] hover:text-white hover:bg-[#27272A] transition-colors"
+              aria-label="Close resume"
             >
               <X className="w-5 h-5" />
             </button>
@@ -143,7 +145,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         </div>
 
         {/* Printable Resume Body */}
-        <div className="p-6 sm:p-10 space-y-8 bg-white text-[#09090B] font-sans text-sm max-h-[75vh] overflow-y-auto">
+        <div className="p-5 sm:p-10 space-y-6 sm:space-y-8 bg-white text-[#09090B] font-sans text-sm max-h-[75vh] overflow-y-auto">
           
           {/* Header */}
           <div className="border-b border-gray-200 pb-6 space-y-2">

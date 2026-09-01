@@ -23,12 +23,12 @@ export const About: React.FC = () => {
         </div>
 
         {/* Main Content Layout: Narrative + Education Timeline Strip */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
           
           {/* Left Column: Recruiter-Focused Narrative (7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-5">
-              <h3 className="font-serif font-semibold text-2xl text-[#09090B] dark:text-[#F4F4F5]">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-5">
+              <h3 className="font-serif font-semibold text-xl sm:text-2xl text-[#09090B] dark:text-[#F4F4F5]">
                 Bridging Academic Rigor with Practical Software Engineering
               </h3>
 
@@ -55,25 +55,25 @@ export const About: React.FC = () => {
             </div>
 
             {/* Quick Metrics Cards */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
-                <span className="block font-serif font-bold text-2xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">3+</span>
-                <span className="text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA]">Industry Internships</span>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4">
+              <div className="p-3 sm:p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
+                <span className="block font-serif font-bold text-xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">3+</span>
+                <span className="text-[10px] sm:text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA] leading-tight">Industry Internships</span>
               </div>
-              <div className="p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
-                <span className="block font-serif font-bold text-2xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">10+</span>
-                <span className="text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA]">Deployed Projects</span>
+              <div className="p-3 sm:p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
+                <span className="block font-serif font-bold text-xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">10+</span>
+                <span className="text-[10px] sm:text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA] leading-tight">Deployed Projects</span>
               </div>
-              <div className="p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
-                <span className="block font-serif font-bold text-2xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">100%</span>
-                <span className="text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA]">Commitment to Code Quality</span>
+              <div className="p-3 sm:p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
+                <span className="block font-serif font-bold text-xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">100%</span>
+                <span className="text-[10px] sm:text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA] leading-tight">Commitment to Code Quality</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Academic & Internship Timeline Visual (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-6 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-6">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-6">
               <div className="flex items-center gap-3 border-b border-[#E4E4E7] dark:border-[#27272A] pb-4">
                 <div className="p-2.5 rounded-lg bg-[#2563EB]/10 text-[#2563EB] dark:bg-[#3B82F6]/20 dark:text-[#3B82F6]">
                   <GraduationCap className="w-5 h-5" />

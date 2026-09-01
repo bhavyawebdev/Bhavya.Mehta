@@ -90,11 +90,11 @@ export const Contact: React.FC = () => {
         </div>
 
         {/* 2-Column Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
           
           {/* Left Column: Direct Contact Info (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-8">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-6 sm:space-y-8">
               
               <div className="space-y-2">
                 <h3 className="font-serif font-bold text-2xl text-[#09090B] dark:text-[#F4F4F5]">
@@ -209,7 +209,7 @@ export const Contact: React.FC = () => {
 
           {/* Right Column: Contact Form (7 Cols) */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-6">
+            <div className="p-6 sm:p-8 rounded-2xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] shadow-xs space-y-6">
               
               <div className="space-y-1">
                 <h3 className="font-serif font-bold text-2xl text-[#09090B] dark:text-[#F4F4F5]">
