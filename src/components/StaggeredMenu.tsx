@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import { forwardRef, useCallback, useImperativeHandle, useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import './StaggeredMenu.css';
 
@@ -11,6 +11,13 @@ export interface StaggeredMenuItem {
 export interface StaggeredMenuSocialItem {
   label: string;
   link: string;
+}
+
+export interface StaggeredMenuHandle {
+  open: () => void;
+  close: () => void;
+  toggle: () => void;
+  isOpen: () => boolean;
 }
 
 interface StaggeredMenuProps {
@@ -28,11 +35,14 @@ interface StaggeredMenuProps {
   changeMenuColorOnOpen?: boolean;
   isFixed?: boolean;
   closeOnClickAway?: boolean;
+  /** Hide the built-in header (toggle button + logo) — useful when an external
+   *  trigger controls the menu (e.g. your own navbar button). */
+  hideBuiltInHeader?: boolean;
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
 }
 
-export const StaggeredMenu = ({
+export const StaggeredMenu = forwardRef<StaggeredMenuHandle, StaggeredMenuProps>(({
   position = 'right',
   colors = ['#B497CF', '#5227FF'],
   items = [],
@@ -47,9 +57,10 @@ export const StaggeredMenu = ({
   changeMenuColorOnOpen = true,
   isFixed = false,
   closeOnClickAway = true,
+  hideBuiltInHeader = false,
   onMenuOpen,
   onMenuClose
-}: StaggeredMenuProps) => {
+}, ref) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -216,6 +227,10 @@ export const StaggeredMenu = ({
   const playOpen = useCallback(() => {
     if (busyRef.current) return;
     busyRef.current = true;
+    if (typeof document !== 'undefined' && isFixed) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    }
     const tl = buildOpenTimeline();
     if (tl) {
       tl.eventCallback('onComplete', () => {
@@ -225,7 +240,7 @@ export const StaggeredMenu = ({
     } else {
       busyRef.current = false;
     }
-  }, [buildOpenTimeline]);
+  }, [buildOpenTimeline, isFixed]);
 
   const playClose = useCallback(() => {
     openTlRef.current?.kill();
@@ -235,6 +250,11 @@ export const StaggeredMenu = ({
     const panel = panelRef.current;
     const layers = preLayerElsRef.current;
     if (!panel) return;
+
+    if (typeof document !== 'undefined' && isFixed) {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
 
     const all = [...layers, panel];
     closeTweenRef.current?.kill();
@@ -360,18 +380,42 @@ export const StaggeredMenu = ({
     }
   }, [playClose, animateIcon, animateColor, animateText, onMenuClose]);
 
+  const openMenu = useCallback(() => {
+    if (!openRef.current) {
+      openRef.current = true;
+      setOpen(true);
+      onMenuOpen?.();
+      playOpen();
+      animateIcon(true);
+      animateColor(true);
+      animateText(true);
+    }
+  }, [playOpen, animateIcon, animateColor, animateText, onMenuOpen]);
+
+  useImperativeHandle(
+    ref,
+    () => ({
+      open: openMenu,
+      close: closeMenu,
+      toggle: toggleMenu,
+      isOpen: () => openRef.current
+    }),
+    [openMenu, closeMenu, toggleMenu]
+  );
+
   useLayoutEffect(() => {
     if (!closeOnClickAway || !open) return;
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        panelRef.current &&
-        !panelRef.current.contains(event.target as Node) &&
-        toggleBtnRef.current &&
-        !toggleBtnRef.current.contains(event.target as Node)
-      ) {
-        closeMenu();
-      }
+      const target = event.target as Node;
+      // Ignore clicks inside the panel or on the externally-rendered trigger.
+      if (panelRef.current && panelRef.current.contains(target)) return;
+      if (toggleBtnRef.current && toggleBtnRef.current.contains(target)) return;
+      // Allow a click on any element marked as a "menu trigger" (the navbar's
+      // hamburger button uses `data-menu-trigger`).
+      const triggerEl = (target as HTMLElement | null)?.closest?.('[data-menu-trigger]');
+      if (triggerEl) return;
+      closeMenu();
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -398,7 +442,7 @@ export const StaggeredMenu = ({
           return arr.map((c, i) => <div key={i} className="sm-prelayer" style={{ background: c }} />);
         })()}
       </div>
-      <header className="staggered-menu-header" aria-label="Main navigation header">
+      <header className={`staggered-menu-header ${hideBuiltInHeader ? 'staggered-menu-header--hidden' : ''}`.trim()} aria-label="Main navigation header">
         {logoUrl ? (
           <div className="sm-logo" aria-label="Logo">
             <img
@@ -490,6 +534,7 @@ export const StaggeredMenu = ({
       </aside>
     </div>
   );
-};
+});
 
+StaggeredMenu.displayName = 'StaggeredMenu';
 export default StaggeredMenu;

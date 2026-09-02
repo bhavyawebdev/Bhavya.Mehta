@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { Theme } from '../hooks/useTheme';
-import { StaggeredMenu, StaggeredMenuItem, StaggeredMenuSocialItem } from './StaggeredMenu';
+import { StaggeredMenu, StaggeredMenuItem, StaggeredMenuSocialItem, StaggeredMenuHandle } from './StaggeredMenu';
 import { personalData } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -16,6 +17,12 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, activeSect
     typeof document !== 'undefined' && document.documentElement.classList.contains('dark')
   );
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuRef = useRef<StaggeredMenuHandle | null>(null);
+
+  const handleMobileToggle = () => {
+    menuRef.current?.toggle();
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -96,15 +103,17 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, activeSect
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 border-b"
+        className="fixed top-0 left-0 right-0 z-[60] border-b md:z-50"
         style={{
           transition: 'background-color 500ms ease, backdrop-filter 500ms ease, border-color 500ms ease',
-          backgroundColor: isScrolled
-            ? isDark ? 'rgba(9, 9, 11, 0.85)' : 'rgba(255, 255, 255, 0.80)'
-            : 'transparent',
-          backdropFilter: isScrolled ? 'blur(20px) saturate(150%)' : 'none',
-          WebkitBackdropFilter: isScrolled ? 'blur(20px) saturate(150%)' : 'none',
-          borderColor: isScrolled
+          backgroundColor: mobileMenuOpen
+            ? isDark ? 'rgba(9, 9, 11, 0.95)' : 'rgba(255, 255, 255, 0.95)'
+            : isScrolled
+              ? isDark ? 'rgba(9, 9, 11, 0.85)' : 'rgba(255, 255, 255, 0.80)'
+              : 'transparent',
+          backdropFilter: (isScrolled || mobileMenuOpen) ? 'blur(20px) saturate(150%)' : 'none',
+          WebkitBackdropFilter: (isScrolled || mobileMenuOpen) ? 'blur(20px) saturate(150%)' : 'none',
+          borderColor: (isScrolled || mobileMenuOpen)
             ? isDark ? 'rgba(255, 255, 255, 0.07)' : 'rgba(0, 0, 0, 0.07)'
             : 'transparent',
         }}
@@ -200,22 +209,34 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, activeSect
             <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           </div>
 
-          {/* ── Mobile controls (theme toggle lives here, toggle button is part of StaggeredMenu) ── */}
+          {/* ── Mobile controls (own hamburger + theme toggle, StaggeredMenu only renders the panel) ── */}
           <div className="flex md:hidden items-center gap-2">
             <ThemeToggle theme={theme} onToggle={onToggleTheme} />
+            <button
+              onClick={handleMobileToggle}
+              data-menu-trigger
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="staggered-menu-panel"
+              className="p-2 rounded-full text-[#09090B] dark:text-[#F4F4F5] hover:bg-black/[0.06] dark:hover:bg-white/[0.08] transition-all duration-200 active:scale-95"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
       </header>
 
-      {/* ── Mobile animated menu (full-viewport, rendered outside header for stacking context) ── */}
+      {/* ── Mobile animated panel (no built-in header, controlled by navbar button) ── */}
       <div className="md:hidden">
         <StaggeredMenu
+          ref={menuRef}
           position="right"
           colors={isDark
             ? ['#0B0B0D', '#18181B', '#1C1C1F']
             : ['#FFFFFF', '#F1F5F9', '#E8ECF0']}
           logoUrl=""
           isFixed
+          hideBuiltInHeader
           items={menuItems}
           socialItems={socialItems}
           displaySocials={true}
@@ -225,6 +246,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme, onToggleTheme, activeSect
           accentColor="#2563EB"
           changeMenuColorOnOpen={true}
           closeOnClickAway={true}
+          onMenuOpen={() => setMobileMenuOpen(true)}
+          onMenuClose={() => setMobileMenuOpen(false)}
         />
       </div>
     </>
