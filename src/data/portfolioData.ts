@@ -52,9 +52,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "HTML5", iconName: "Code2", featured: true },
       { name: "CSS3", iconName: "Palette", featured: true },
       { name: "JavaScript (ES6+)", iconName: "FileCode", featured: true },
-      { name: "React", iconName: "Atom", featured: true },
-      { name: "TypeScript", iconName: "FileSpreadsheet", featured: true },
-      { name: "Next.js", iconName: "Layers", featured: true }
+      { name: "React", iconName: "Atom", featured: true }
     ]
   },
   {
@@ -73,7 +71,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "MySQL", iconName: "Database", featured: true },
       { name: "PostgreSQL", iconName: "DatabaseBackup", featured: true },
       { name: "MongoDB", iconName: "HardDrive", featured: true },
-      { name: "NoSQL", iconName: "Table", featured: true },
+      { name: "Supabase", iconName: "Table", featured: true },
       { name: "Firebase", iconName: "Flame", featured: true }
     ]
   },
@@ -85,7 +83,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "Canva", iconName: "Layout", featured: true },
       { name: "ChatGPT / AI SDKs", iconName: "Sparkles", featured: true },
       { name: "Notion", iconName: "BookOpen", featured: true },
-      { name: "Slack", iconName: "MessageSquare", featured: true }
+      { name: "Slack", iconName: "MessageSquare", featured: true },
+      { name: "Learning AWS", iconName: "Cloud", featured: false }
     ]
   }
 ];
