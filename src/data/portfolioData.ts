@@ -98,7 +98,7 @@ export const projectsData: Project[] = [
     longDescription: "Lumina HRM provides an enterprise-grade dashboard for organizational workflow automation. Features include multi-tier role permissions, interactive leave approval pipelines, real-time analytics for HR managers, and automated payroll calculations.",
     tags: ["PHP", "MySQL", "JavaScript", "Bootstrap", "HR Tech"],
     liveUrl: "https://luminahrm.infinityfreeapp.com",
-    githubUrl: "https://github.com/bhavyawebdev/lumina-hrm",
+    githubUrl: "https://github.com/bhavyawebdev/luminahrm",
     featured: true,
     imagePlaceholderGradient: "from-blue-600 to-indigo-800",
     highlights: [
@@ -114,8 +114,8 @@ export const projectsData: Project[] = [
     description: "A modern digital wellness and yoga web application providing personalized pose routines, guided meditation timers, and habit tracking.",
     longDescription: "Yogami brings holistic wellness to user screens with clean motion animations, curated pose posture guides, customizable daily routines, and audio-guided breathing exercises crafted with modern responsive layout techniques.",
     tags: ["React", "TypeScript", "Tailwind CSS", "Motion", "Wellness"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/bhavyawebdev/yogami-wellness",
+    liveUrl: "https://bhavyawebdev.github.io/yogami3/",
+    githubUrl: "https://github.com/bhavyawebdev/yogami3",
     featured: true,
     imagePlaceholderGradient: "from-teal-600 to-emerald-800",
     highlights: [
@@ -131,8 +131,8 @@ export const projectsData: Project[] = [
     description: "An elegant restaurant and hospitality web application featuring online table reservations, interactive culinary menus, and customer feedback management.",
     longDescription: "Bella Vista delivers a sophisticated dining experience web platform featuring dynamic menu categories, real-time table availability checking, reservation confirmation mailers, and customer review portals.",
     tags: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/bhavyawebdev/bella-vista-restaurant",
+    liveUrl: "https://bhavyamehta07.github.io/Bella-vista/",
+    githubUrl: "https://github.com/bhavyawebdev/Bella-vista",
     featured: true,
     imagePlaceholderGradient: "from-amber-600 to-stone-800",
     highlights: [

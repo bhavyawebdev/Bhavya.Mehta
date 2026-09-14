@@ -61,7 +61,7 @@ export const About: React.FC = () => {
                 <span className="text-[10px] sm:text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA] leading-tight">Industry Internships</span>
               </div>
               <div className="p-3 sm:p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
-                <span className="block font-serif font-bold text-xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">10+</span>
+                <span className="block font-serif font-bold text-xl sm:text-3xl text-[#2563EB] dark:text-[#3B82F6]">3+</span>
                 <span className="text-[10px] sm:text-xs font-medium text-[#3F3F46] dark:text-[#A1A1AA] leading-tight">Deployed Projects</span>
               </div>
               <div className="p-3 sm:p-4 rounded-xl bg-[#FAFAFA] dark:bg-[#1C1C1F] border border-[#E4E4E7] dark:border-[#27272A] text-center space-y-1">
