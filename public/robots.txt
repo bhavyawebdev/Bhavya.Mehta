@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /og-image.png
+Allow: /bhavya.jpg
+
+# Disallow internal dev assets
+Disallow: /src/
 
 Sitemap: https://bhavya-mehta.vercel.app/sitemap.xml
