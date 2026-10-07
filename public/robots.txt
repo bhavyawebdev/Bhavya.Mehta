@@ -1,9 +1,16 @@
 User-agent: *
 Allow: /
+
+# Explicitly allow important media assets
 Allow: /og-image.png
 Allow: /bhavya.jpg
+Allow: /certificate-crontosys.jpeg
+Allow: /certificate-ithub-frontend.jpeg
+Allow: /certificate-ithub-webdev.jpeg
 
-# Disallow internal dev assets
-Disallow: /src/
+# Allow Googlebot-Image to index all images
+User-agent: Googlebot-Image
+Allow: /
 
+# Sitemap location
 Sitemap: https://bhavya-mehta.vercel.app/sitemap.xml

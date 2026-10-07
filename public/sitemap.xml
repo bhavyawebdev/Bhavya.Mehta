@@ -3,10 +3,46 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
           http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Root / Home -->
   <url>
     <loc>https://bhavya-mehta.vercel.app/</loc>
-    <lastmod>2026-09-24T00:00:00+05:30</lastmod>
+    <lastmod>2026-10-07T00:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <!-- About section -->
+  <url>
+    <loc>https://bhavya-mehta.vercel.app/#about</loc>
+    <lastmod>2026-10-07T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Skills section -->
+  <url>
+    <loc>https://bhavya-mehta.vercel.app/#skills</loc>
+    <lastmod>2026-10-07T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Projects section -->
+  <url>
+    <loc>https://bhavya-mehta.vercel.app/#projects</loc>
+    <lastmod>2026-10-07T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Experience section -->
+  <url>
+    <loc>https://bhavya-mehta.vercel.app/#experience</loc>
+    <lastmod>2026-10-07T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Contact section -->
+  <url>
+    <loc>https://bhavya-mehta.vercel.app/#connect</loc>
+    <lastmod>2026-10-07T00:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
